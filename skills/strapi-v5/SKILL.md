@@ -3,7 +3,7 @@ name: strapi-v5
 description: Create, update, draft, publish, and attach media to Strapi v5 Cloud content via the REST API. Use this skill whenever you are working with Strapi — creating blog posts, articles, or any content-type entries; uploading images or files; attaching media to entries; or calling any endpoint on a Strapi Cloud project (*.strapiapp.com). Strapi v5 has silent footguns that this skill prevents — drafts publish by default on REST writes, updates to drafts auto-publish them, and the upload field name is specific. Consult this skill even for tasks that look trivial, because the common mistakes produce responses that look successful until a human checks the CMS.
 metadata:
   author: Lionelndong
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Strapi v5 Cloud REST API
@@ -11,9 +11,9 @@ metadata:
 Use this skill whenever you call `*.strapiapp.com/api/*`. It prevents the two failure modes agents hit over and over on Strapi v5:
 
 1. **Drafts that silently publish.** Omitting `?status=draft` publishes on create. Updating an existing draft without the param publishes it too. Neither returns an error.
-2. **Uploads that 400 or never attach.** The upload field is `files` (plural), body must be multipart, and the attach step uses the numeric `id` — not `documentId`.
+2. **Uploads that 400 or never attach.** The upload field is `files` (plural), body must be multipart, and the attach step usually needs the numeric upload `id` — not the `documentId`.
 
-The rest of this doc is the commands and rules to never hit those again.
+The rest of this doc is the commands and rules to never hit those again. Every load-bearing claim links to a docs page or open GitHub issue — see [Sources & verification](#sources--verification) at the bottom.
 
 ## The two rules that prevent 90% of mistakes
 
@@ -35,19 +35,21 @@ curl -X POST "$BASE/api/articles?status=draft" \
   -d '{"data":{"title":"Hello"}}'
 ```
 
-And the worse one — **updating a draft without `?status=draft` auto-publishes it** (Strapi issue #24547):
+And the worse one — **updating a draft without `?status=draft` auto-publishes it** (Strapi issue [#24547](https://github.com/strapi/strapi/issues/24547), still open):
 
 ```bash
 # WRONG — this PUT publishes the draft you were trying to edit
 curl -X PUT "$BASE/api/articles/$DOCID" -d '{"data":{"title":"edit"}}'
 
-# RIGHT — stays a draft
+# LIKELY RIGHT — inferred from POST behavior, should keep it a draft
 curl -X PUT "$BASE/api/articles/$DOCID?status=draft" -d '{"data":{"title":"edit"}}'
 ```
 
+> ⚠️ **`POST ?status=draft` is officially confirmed** by Strapi in issue [#23968](https://github.com/strapi/strapi/issues/23968) (closed). **`PUT ?status=draft` on an existing draft is not explicitly documented** — it follows from POST by analogy, but issue #24547 is still open and nobody has confirmed the fix in that thread. If your agent reports that the update still published, fall back to: (a) fetch the draft, (b) do any edits in a new `POST ?status=draft` + delete old, or (c) call a custom Strapi route that uses the Document Service API's `update({status: 'draft'})` server-side.
+
 Default every Strapi write to `?status=draft`. Only drop it when a human has explicitly said "publish it".
 
-### Rule 2 — The upload field is `files`, multipart only, and attach uses the numeric `id`
+### Rule 2 — The upload field is `files`, multipart only, and attach typically uses the numeric `id`
 
 ```bash
 # WRONG — 400 "files field is required"
@@ -73,7 +75,7 @@ Response is a **bare array**, not `{data: ...}`:
 [{"id": 42, "documentId": "kq9...","url": "https://...media.strapiapp.com/cover_abc.jpg", ...}]
 ```
 
-The field is `files` — not `file`, `image`, `upload`, `attachment`, or `media`. The `id` you get back is a **number** — that's the one you pass when attaching to a content-type relation. Do not pass `documentId` for media relations; it will silently create an empty relation.
+The field is `files` — not `file`, `image`, `upload`, `attachment`, or `media`. This is confirmed in Strapi's source (`packages/core/upload/server/src/controllers/content-api.ts` destructures `ctx.request.files.files`) and in the docs ("files is the only accepted parameter"). The `id` you get back in the response is numeric — pass that numeric `id` when attaching to a content-type media relation. Passing `documentId` to a media relation is not documented to work and community examples consistently use the numeric id.
 
 ## Quick reference card
 
@@ -96,8 +98,8 @@ curl -X PUT "$BASE/api/articles/$DOCID?status=draft" -H "$AUTH" -H "Content-Type
 curl -X PUT "$BASE/api/articles/$DOCID?status=published" -H "$AUTH" -H "Content-Type: application/json" \
   -d '{"data":{}}'
 
-# Unpublish (no dedicated endpoint — delete the published version, draft remains)
-curl -X DELETE "$BASE/api/articles/$DOCID?status=published" -H "$AUTH"
+# Unpublish — NO clean REST mechanism exists. See Part 1 and issue #24547.
+# The unpublish() method is only exposed in the server-side Document Service API.
 
 # --- READS ---
 curl "$BASE/api/articles?status=draft"                       # list drafts
@@ -125,12 +127,14 @@ curl -X DELETE "$BASE/api/upload/files/42" -H "$AUTH"
 |---|---|---|---|---|
 | Create draft | POST | `/api/{plural}` | `?status=draft` | `{"data": {...}}` |
 | Create published | POST | `/api/{plural}` | *(omit)* or `?status=published` | `{"data": {...}}` |
-| Update draft | PUT | `/api/{plural}/{documentId}` | `?status=draft` (**required**) | `{"data": {...}}` |
-| Publish a draft | PUT | `/api/{plural}/{documentId}` | `?status=published` | `{"data": {}}` |
-| Read draft | GET | `/api/{plural}/{documentId}` | `?status=draft` | — |
-| Read published | GET | `/api/{plural}/{documentId}` | *(omit)* | — |
-| Delete published version | DELETE | `/api/{plural}/{documentId}` | `?status=published` | — |
-| Delete entirely | DELETE | `/api/{plural}/{documentId}` | *(omit)* | — |
+| Update draft | PUT | `/api/{plural}/{documentId}` | `?status=draft` ⚠️ inferred | `{"data": {...}}` |
+| Publish a draft | PUT | `/api/{plural}/{documentId}` | `?status=published` ⚠️ inferred | `{"data": {}}` |
+| Read draft | GET | `/api/{plural}/{documentId}` | `?status=draft` ✅ | — |
+| Read published | GET | `/api/{plural}/{documentId}` | *(omit)* ✅ | — |
+| Delete entirely | DELETE | `/api/{plural}/{documentId}` | *(omit)* ✅ | — |
+| Unpublish only | — | — | — | ❌ No REST mechanism. See below. |
+
+Legend: ✅ documented, ⚠️ inferred from POST behavior (see issue #24547), ❌ not supported via REST.
 
 `{plural}` is the pluralApiId from Content-Type Builder (e.g. `articles`, `blog-posts`). `{documentId}` is the v5 string id, not the numeric one.
 
@@ -184,16 +188,19 @@ curl -X PUT "$BASE/api/articles/kq9r8x2n4p7?status=published" \
 
 An empty `data` is fine — the state transition is what you want. You can also pass field updates in the same call.
 
-### Unpublishing
+### Unpublishing — there is no clean REST mechanism
 
-There is no `POST /unpublish` endpoint in v5. To take a published post back to draft-only state:
+This is a known gap. Strapi v5 exposes `publish()` and `unpublish()` methods in the **Document Service API** (server-side JavaScript only, not REST), and issue [#24547](https://github.com/strapi/strapi/issues/24547) is still open with the title *"API: Updating an entry automatically publishes it, and there is no way to unpublish"*.
 
-```bash
-curl -X DELETE "$BASE/api/articles/kq9r8x2n4p7?status=published" \
-  -H "Authorization: Bearer $TOKEN"
-```
+Do not trust any curl recipe that claims to unpublish via REST unless you have tested it on your exact Strapi version. In particular, `DELETE ?status=published` has been circulated as a workaround but is **not documented** and is **not confirmed** to work on Strapi Cloud.
 
-This deletes the **published version** only. The draft remains intact and editable. Omit `?status=published` and you delete the document entirely — draft and all.
+Your options:
+
+1. **Custom Strapi route (recommended).** In your Strapi project, add a route like `POST /api/articles/:documentId/unpublish` whose controller calls `strapi.documents('api::article.article').unpublish({ documentId })`. Deploy that, then agents POST to it.
+2. **Accept the limitation.** Only publish via REST when you're sure you want it live. Treat "unpublish" as a human-in-the-admin task.
+3. **Delete and recreate as draft.** Destructive, loses history. Only for scratch content.
+
+> ⚠️ Strapi team does not recommend `publishedAt: null` in the body (ignored in v5) and there is no documented REST unpublish. Track issue #24547 for updates.
 
 ### v4 → v5 diff cheat sheet
 
@@ -202,9 +209,9 @@ This deletes the **published version** only. The draft remains intact and editab
 | Unique identifier in paths | numeric `id` | string `documentId` |
 | Response shape | `{data: {id, attributes: {...}}}` | `{data: {id, documentId, ...fields}}` |
 | Relation in responses | `{data: {id, attributes}}` | plain object |
-| Draft on create | `publishedAt: null` in body | `?status=draft` in URL |
-| Publish | `POST /{plural}/{id}/actions/publish` | `PUT /{plural}/{docId}?status=published` |
+| Draft on create | `publishedAt: null` in body | `?status=draft` in URL (confirmed by Strapi team, issue #23968) |
 | List drafts | `publicationState=preview` | `status=draft` |
+| Publish / unpublish | v4 helpers existed | No dedicated REST endpoint. `publish()` / `unpublish()` live only in the server-side Document Service API. |
 
 ## Part 2 — Uploading and attaching media
 
@@ -310,7 +317,7 @@ For a multi-image field (repeatable media), pass an array of numeric ids: `{ dat
 
 ### One-step flow (upload + attach in one call)
 
-Works, but the `refId` must be the **numeric `id`** of the entry, not the `documentId`. That means you have to fetch the entry first to get its numeric id, which defeats most of the point.
+Works, but `refId` is the numeric `id` of the entry in most community examples (docs just say "The ID of the entry"). To get the numeric `id` you usually have to fetch the entry first, which defeats most of the point.
 
 ```bash
 curl -X POST "$BASE/api/upload" \
@@ -333,7 +340,7 @@ Prefer the two-step flow in 99% of cases.
 | 403 on upload | API token missing `plugin::upload.content-api.upload` | Enable in Custom token permissions |
 | 413 Payload Too Large | File > Cloud limit | Downscale (keep under ~25 MB) and retry |
 | 500 with hash collision | Rare duplicate filename hash | Rename the file and retry |
-| Upload succeeds, entry shows no image | You passed `documentId` to the media relation, or forgot `?status=draft` on the PUT | Use the numeric `id`, include `?status=draft` |
+| Upload succeeds, entry shows no image | Either you passed a `documentId` to a media relation instead of the numeric `id`, or you forgot `?status=draft` on the PUT and the published version has no image | Use the numeric `id` from the upload response; include `?status=draft` |
 
 See [references/errors.md](references/errors.md) for the full error → cause → fix table.
 
@@ -480,3 +487,30 @@ The default is always draft. Publishing is a separate, explicit step.
 - [ ] If uploading: form field is `files` (plural), body is multipart, no manual `Content-Type` header?
 - [ ] If attaching media: am I passing the **numeric `id`** from the upload response, not the media's `documentId`?
 - [ ] `Authorization: Bearer <API token>` header present? (Not a JWT.)
+
+## Sources & verification
+
+Every load-bearing claim in this skill was verified against one of the following as of Feb 2026. If anything here contradicts a newer version of the docs, trust the docs.
+
+**Official Strapi v5 documentation:**
+- REST API overview — https://docs.strapi.io/cms/api/rest (confirms `documentId` path params, flat response shape)
+- Status parameter — https://docs.strapi.io/cms/api/rest/status (defines `status=draft|published`, default `published`; page itself only shows GET examples)
+- Parameters reference — https://docs.strapi.io/cms/api/rest/parameters (lists `status` as a valid query parameter)
+- Upload plugin REST — https://docs.strapi.io/cms/api/rest/upload (confirms `files` field, `ref`/`refId`/`field` attach params)
+- Document Service API — https://docs.strapi.io/cms/api/document-service (confirms `publish()` and `unpublish()` exist only server-side)
+- Draft & Publish feature — https://docs.strapi.io/cms/features/draft-and-publish
+- API tokens — https://docs.strapi.io/cms/features/api-tokens
+
+**Authoritative community / Strapi team statements:**
+- Issue [#23968](https://github.com/strapi/strapi/issues/23968) (closed) — Strapi team confirms `POST /api/{plural}?status=draft` is the correct way to create a draft via REST. *Canonical quote from a Strapi maintainer: "you specify a 'status' parameter in the request path like this: `POST {{host_local}}/api/movies?status=draft`".*
+- Issue [#24860](https://github.com/strapi/strapi/issues/24860) (open) — confirms `publishedAt: null` in the request body is silently ignored on v5 writes.
+- Issue [#24547](https://github.com/strapi/strapi/issues/24547) (open) — confirms PUT on an existing draft auto-publishes it, AND that there is no documented REST unpublish mechanism.
+
+**Upload field name — direct source confirmation:**
+- `packages/core/upload/server/src/controllers/content-api.ts` line 106: `ctx.request.files.files` — the controller destructures from the `files` multipart field, proving the field name is literally `files` and nothing else is accepted.
+
+**What is NOT fully verified (treat with care):**
+- `PUT /api/{plural}/{documentId}?status=draft` preventing auto-publish on update — follows by analogy from the POST case (same query parameter, same semantic) but is not explicitly documented and has not been confirmed in the #24547 thread. If it fails on your Strapi version, fall back to the Document Service API via a custom route.
+- `PUT ?status=published` as the publish mechanism — same inference as above.
+- Media relation fields accepting numeric `id` — widely used in community examples, not explicitly documented as the required form.
+- `DELETE /api/{plural}/{documentId}?status=published` as an unpublish mechanism — **removed from this skill.** It was circulated as a workaround but is not documented, not confirmed, and may silently fail.

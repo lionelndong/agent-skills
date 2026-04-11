@@ -29,8 +29,8 @@ These return 200 or 201 but produce a result that doesn't match what the agent i
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| "Created a draft" but it's live on the site | Omitted `?status=draft` on the POST. `publishedAt: null` in the body is silently ignored in v5. | Re-do with `?status=draft`. To clean up: `DELETE /api/{plural}/{docId}?status=published` removes the published version and keeps the draft. |
-| "Updated a draft" but now it's published | Omitted `?status=draft` on the PUT. Strapi v5 auto-publishes on updates unless the param is present (issue #24547). | Always pass `?status=draft` when editing a draft. |
+| "Created a draft" but it's live on the site | Omitted `?status=draft` on the POST. `publishedAt: null` in the body is silently ignored in v5 (issue #24860). | Re-do with `?status=draft`. There is no documented REST unpublish (issue #24547) — if the wrong version is live, your cleanest recourse is a custom Strapi route that calls `strapi.documents(uid).unpublish({ documentId })` server-side. |
+| "Updated a draft" but now it's published | Omitted `?status=draft` on the PUT. Strapi v5 auto-publishes on updates unless the param is present (issue #24547). | Pass `?status=draft` on the PUT. ⚠️ This follows from POST behavior but is not explicitly documented for PUT and is not confirmed in the #24547 thread — if it fails on your Strapi version, use a custom route backed by `strapi.documents(uid).update({ documentId, status: 'draft', data })`. |
 | "Set `status: draft` in the body" but it got ignored | `status` is not a field on the entry — it's a URL query param | Move it to the URL: `?status=draft` |
 | Upload succeeds, entry shows no image | Attached `documentId` instead of numeric `id` to a media relation | Use the numeric `id` from the upload response in the relation body |
 | Upload succeeds, entry shows no image (variant 2) | Attach PUT was missing `?status=draft`, published over the draft with no media set | Re-attach with `?status=draft` and the numeric id |
@@ -64,9 +64,19 @@ curl -v -X POST "$BASE/api/upload" -H "$AUTH" -F "files=@./cover.jpg"
 
 ## Upstream references
 
-- Strapi v5 REST API: https://docs.strapi.io/cms/api/rest
-- Draft & Publish in v5: https://docs.strapi.io/cms/features/draft-and-publish
-- Upload plugin: https://docs.strapi.io/cms/plugins/upload
-- API tokens: https://docs.strapi.io/cms/features/api-tokens
-- Issue #24860 (`publishedAt: null` ignored): https://github.com/strapi/strapi/issues/24860
-- Issue #24547 (PUT on draft auto-publishes): https://github.com/strapi/strapi/issues/24547
+**Official docs (verified Feb 2026):**
+- Strapi v5 REST API overview — https://docs.strapi.io/cms/api/rest
+- `?status` query parameter (reads) — https://docs.strapi.io/cms/api/rest/status
+- Parameters reference — https://docs.strapi.io/cms/api/rest/parameters
+- Upload plugin REST API — https://docs.strapi.io/cms/api/rest/upload
+- Document Service API (server-side `publish()` / `unpublish()`) — https://docs.strapi.io/cms/api/document-service
+- Draft & Publish feature — https://docs.strapi.io/cms/features/draft-and-publish
+- API tokens — https://docs.strapi.io/cms/features/api-tokens
+
+**Open GitHub issues this skill works around:**
+- Issue [#23968](https://github.com/strapi/strapi/issues/23968) (closed) — Strapi team canonical statement that `POST ?status=draft` is the correct way to create a draft via REST.
+- Issue [#24860](https://github.com/strapi/strapi/issues/24860) (open) — `publishedAt: null` in the body is silently ignored on v5 writes.
+- Issue [#24547](https://github.com/strapi/strapi/issues/24547) (open) — PUT on an existing draft auto-publishes, and there is no documented REST unpublish.
+
+**Source-code confirmation of upload field name:**
+- `packages/core/upload/server/src/controllers/content-api.ts` line 106: `ctx.request.files.files` — proves the multipart field must be named `files`.
