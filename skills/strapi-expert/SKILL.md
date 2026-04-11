@@ -1,5 +1,5 @@
 ---
-name: strapi-v5
+name: strapi-expert
 description: Create, update, draft, publish, and attach media to Strapi v5 Cloud content via the REST API. Use this skill whenever you are working with Strapi — creating blog posts, articles, or any content-type entries; uploading images or files; attaching media to entries; or calling any endpoint on a Strapi Cloud project (*.strapiapp.com). Strapi v5 has silent footguns that this skill prevents — drafts publish by default on REST writes, updates to drafts auto-publish them, and the upload field name is specific. Consult this skill even for tasks that look trivial, because the common mistakes produce responses that look successful until a human checks the CMS.
 metadata:
   author: Lionelndong
