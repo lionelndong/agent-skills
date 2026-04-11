@@ -20,9 +20,9 @@ npx skills add Lionelndong/agent-skills --list
 
 ## Skills
 
-| Skill | What it teaches |
-|---|---|
-| [`strapi-v5`](skills/strapi-v5/SKILL.md) | Create, update, draft, publish, and attach media to Strapi v5 Cloud content via the REST API — without silently publishing drafts or failing uploads. |
+| Skill | What it teaches | skills.sh |
+|---|---|---|
+| [`strapi-v5`](skills/strapi-v5/SKILL.md) | Create, update, draft, publish, and attach media to Strapi v5 Cloud content via the REST API — without silently publishing drafts or failing uploads. | [listing](https://skills.sh/lionelndong/agent-skills/strapi-v5) |
 
 ## Repo layout
 
