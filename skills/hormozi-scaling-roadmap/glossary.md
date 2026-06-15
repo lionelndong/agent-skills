@@ -1,0 +1,61 @@
+# Glossary — $100M Scaling Roadmap
+
+Terms, named methods, and stage labels exactly as used in the roadmap. Stage references in parentheses.
+
+- **"Angry Boat" method** — the named method for handling upset customers (Stage 2).
+- **ATS (applicant tracking software)** — software to track job candidates when open roles outpace your ability to follow up (Stage 7).
+- **"Better" beats "More"** — the secret to success at Stage 6: train/improve/serve/use what you have better instead of adding more people, products, customers, or tools (Stage 6).
+- **Big bet** — a move big enough to move the needle for a large company: M&A or R&D; takes at least a year to pay off (Stage 9).
+- **Bottom Line** — each stage card's one-line statement of the current constraint (e.g. "Your business makes no money").
+- **Brand-building** — shifting from "just selling" to building a brand (clear simple message, give away free value, associate with trusted brands) as paid ads decay (Stage 8; reinforced Stage 9).
+- **CAC** — customer acquisition cost; rises as audiences get colder and ads decay (Stages 6, 8).
+- **CAPITALIZE** — Stage 9; role Chairman; make a big bet on the future.
+- **Cash cows** — your famous, successful, profitable products that get worse if you change them (Stage 9).
+- **CATEGORIZE** — Stage 7; role Executive; sort the chaos and triage appropriately.
+- **Chairman** — the owner's role at Stage 9 (five layers of management, including CEOs).
+- **Churn** — customers leaving (often because they need things you don't offer); reduced by a second product (Stages 5, 6).
+- **"CLOSER" method** — the named method for converting leads / a consistent sales script (Stage 2).
+- **Cohort (customers)** — group customers by when they joined and how they use products, to track success metrics (Stage 6).
+- **Director** — the owner's role at Stage 5 (2–3 managers under you).
+- **Doer** — the owner's role at Stage 2 (running the business, starting to use freelancers).
+- **"Epiphany Script"** — the named script for getting testimonials from happy customers (Stage 2).
+- **Executive** — the owner's role at Stage 7 (three layers of leadership under you).
+- **Fix the ONE biggest problem first** — pick the #1 customer complaint, fix just that, then move on (Stage 3; recurs as "one improvement at a time," Stage 6).
+- **Founder final check** — the founder does a final check on important hires to protect culture (Stage 8).
+- **Founder-led recruiting** — the founder personally recruits the highest-level roles (top people won't respond to normal postings); can take 6+ months (Stage 9).
+- **Graduate by** — each stage card's exit condition (what you must achieve to move to the next stage).
+- **Headcount** — the employee-count band that defines each stage (e.g. 5 to 9 at Stage 4).
+- **Hidden costs** — things that make customers unhappy even if they don't say so directly (Stage 1).
+- **HRIS (Human Resource Information System)** — "one big digital filing cabinet" for scattered employee info (Stage 7).
+- **IMPROVISE** — Stage 0; role Researcher; get people to try your stuff for free.
+- **Leader** — the owner's role at Stage 6 (a full team of managers under you).
+- **Lead scoring** — scoring leads so you know which are worth pursuing (Stage 7).
+- **LTV** — lifetime value (revenue per customer over time); "extend LTV" = make more per customer (Stage 5).
+- **LTV:CAC** — ratio of lifetime value to acquisition cost; "low LTV:CAC" is the Stage 5 constraint.
+- **M&A (Mergers & Acquisitions)** — buying another company as the Stage 9 big bet.
+- **Manager** — the owner's role at Stage 4 (one layer between you and the front line).
+- **MONETIZE** — Stage 1; role Starter; make your first sale.
+- **Niche down** — choose a specific customer type, reshape the product for them, and raise prices to match (Stage 4).
+- **"One engine boat"** — relying on one acquisition channel is risky; add a second channel (Stage 7).
+- **OPTIMIZE** — Stage 6; role Leader; do better rather than do more.
+- **Organized Chaos** — the feel of Stage 7: larger than most but disorganized, systems bursting at the seams.
+- **Pay retail (stop)** — renegotiate vendor prices, earn interest on idle cash, audit for waste (Stage 8).
+- **President** — the owner's role at Stage 8 (four layers of management under you).
+- **Prevention over firefighting** — prevent customer problems before they happen instead of always reacting (Stage 7).
+- **PRIORITIZE** — Stage 4; role Manager; niche down to serve people like your best customers.
+- **PRODUCTIZE** — Stage 5; role Director; make and sell a second premium product.
+- **Referral program** — a common second acquisition channel: happy customers bring in new ones (Stage 7).
+- **Researcher** — the owner's role at Stage 0.
+- **"Rule of 100"** — spend 100 minutes daily on marketing (Stage 2).
+- **Say "no"** — the key Stage 4 skill: no to wrong customers, wrong projects, and doing everything yourself.
+- **Second premium product** — a new, usually higher-priced product sold to existing customers to extend LTV (Stage 5).
+- **SPECIALIZE** — Stage 8; role President; create dedicated specialist people and teams.
+- **STABILIZE** — Stage 3; role Trainer; get help (go from chaos to stability).
+- **Stage card** — the per-stage summary: Role, Headcount, Bottom Line, Graduate By.
+- **Starter** — the owner's role at Stage 1.
+- **Strategic workforce planning** — plan org structure, plan for departures, fill skill gaps, back up key roles, turn generalists into specialists (Stage 9).
+- **Swiss Army knife product** — a product with too many features that confuses customers; trim it, possibly turn features into separate products (Stage 8).
+- **Trainer** — the owner's role at Stage 3 (teaching others to run the business).
+- **Triage** — sort and prioritize the overwhelmed systems at Stage 7.
+- **Unscalable way (fix things in an)** — do whatever it takes to make customers happy even if inefficient; be valuable, not scalable yet (Stage 2).
+- **V1 / "Version 1"** — a product good enough that people will pay for it, not perfect (Stage 1).

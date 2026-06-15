@@ -1,0 +1,70 @@
+# Glossary — Gym Launch Secrets
+
+- **Abandon Hope Sale** — the Week-3/halfway EFT conversion attempt; provide value, re-ask the goal questions, credit their front-end payment toward a year membership at a lifetime lower rate. Closes ~95% (Ch 23).
+- **Abundant Exchange** — giving clients more than they paid for (community, attention, fixing problems they didn't know they had); what they come *back* for (Ch 13).
+- **Accommodating Buying Curve** — Wedding Cake Driver #1: let higher-spenders (the 20%) pay 3x–10x; adding a higher tier ~2x's revenue (Ch 22).
+- **Ascend** — growth path #2: increase average purchase via price + cross-sells/upsells; also the 4th customer milestone (Ch 2, 15).
+- **Ascension** — selling more after the first sale: upsell (large group → semis) or cross-sell (supplements). "The money is always in the back end" (Ch 15).
+- **Attrition / Churn** — % of members who leave each month; industry average ~10%; these systems target 3% (Ch 1, 13).
+- **Belief-Breaking Formula** (Linh Trinh) — 1) say what they believe, 2) why it's wrong, 3) what's right, 4) why it's right, 5) show proof. Used in CLOSER's Sell step (Ch 6).
+- **Bribe** — (offer step) give a normally-paid item free for signing up today; also the Day-1 EFT conversion (price-anchor high, give the program free with membership) (Ch 2, 23).
+- **Cake** — recurring cash flow from existing/ascending customers (EFT); the backbone/stability of the Wedding Cake (Ch 22).
+- **Calibration** — standardizing/lowering trainer pay across the team; Hormozi's last-resort overhead micro lever (Ch 10).
+- **Category Economics / Category King** — all the money in a category flows to the dominant player; being less than spectacular leaves you with scraps (Ch 15).
+- **C-L-O-S-E-R Formula** — the sales framework: **C**larify, **L**abel, **O**verview, **S**ell (the vacation), **E**xplain (concerns), **R**einforce (Ch 6).
+- **Client-Financed Acquisition®** — using high-ticket front-end cash to cover ad/lead cost so acquisition is self-funding (Ch 3).
+- **Connect** — first customer milestone; form the relationship in the first few weeks (Ch 15).
+- **Crazy Guarantee** — a bold satisfaction/refund guarantee that removes the prospect's risk ("I'll write you a refund check myself") (Ch 2).
+- **Decommoditization** — making your offer so unique it can't be price-compared; achieved via an irresistible offer (Ch 2).
+- **DEP (Defined-End Program)** — a program lasting X days/Y weeks; people pay 2–4x more for something not on continuity (Ch 2).
+- **Devil Is In The Decimals** — there are 4.33 weeks per month, so weekly billing pushes ~8% more revenue (Ch 8).
+- **Downsell Your Upsell** — sell the expensive defined-end program first, then the cheaper continuity ("no one wants a membership… they want a result and a deadline") (Ch 2, 24).
+- **EFT (Electronic Funds Transfer)** — a recurring member on auto-pay; the core unit of gym revenue (Ch 1).
+- **Empty Session Problem** — ~90% of gyms over-fulfill (too many half-empty sessions), eroding margin (Ch 10).
+- **Exit Interview** — the 5th retention horseman; a CLOSER-style re-sell that can save ~half of cancellations (Ch 16).
+- **The Five Horsemen Of Retention** — Reach-Outs, Attendance Tracking, Handwritten Cards, Member Events, Exit Interviews (Ch 16).
+- **Gym Lords** — Gym Launch's highest-level gym owners, who get tested-and-proven winning systems; #gymlords (Ch 3, 22).
+- **Gym Profit Levers™** — the trademarked levers for the 3 ways to grow; three macro types: Price, Capacity, Overhead (Ch 2, 7).
+- **Hamburger Workout** — the standardized session structure (prep → walk-in → during → close) that makes a great experience near-automatic (Ch 21).
+- **HGM (Hypothetical Gym Max)** — max EFTs = new sign-ups ÷ churn %; the Pie Equation (Ch 14).
+- **HTP (Hybrid Training Protocol / High-Ticket Program)** — the 1-on-4 semi-private tier; $500–$700/mo, sold as a $2K–$3K 12-week front end (Ch 24).
+- **Icing** — front-end cash flow from new customers; funds profitable acquisition (Ch 22).
+- **Integrity Tie-Down** — a labeling script to lock in show-up commitment ("Do you consider yourself a person of integrity?") (Ch 4).
+- **Internal Play** — a marketing campaign aimed at existing customers; a traffic source/second funnel, not a tier (Ch 26).
+- **Irresistible Offer** — the unique, decommoditized front-end offer (e.g. free 6-week challenge that costs $500–$600), sold via 8 steps (Ch 2).
+- **Labeling** — assigning a positive attribute, getting agreement, then prompting the consistent action (Ch 4).
+- **Last Chance** — the weigh-out EFT conversion; give credit for results, change the terms (not the price) to back into your target EFT (Ch 23).
+- **LBO (Low Barrier Offer)** — a cheap front-end offer ("$21 for 21 days"); the broken model to stop using (Ch 1).
+- **Lead-Gen Scrambler** — a system to mass-produce ads by scrambling headlines, images, copy, page names (Ch 3).
+- **The 12 Copy Commandments** — the ad-copy checklist (headline first, call-out, reason why, damaging admission, show-don't-tell, third-grade level, etc.) (Ch 3).
+- **Macro Lever / Micro Lever** — major profit initiatives (Price/Capacity/Overhead) and the smaller levers within each (Ch 7).
+- **Negative Client-Acquisition Cost** — you make money getting each new customer; the goal of client-financed acquisition (Ch 3).
+- **No Man's Land** — the 5–15-person, $250–$399/mo zone to avoid (too high for one buyer pocket, too low to deliver service) (Ch 8).
+- **OGs (Original Gangsters)** — founding members grandfathered in at low rates; the heart/soul of the gym who drag down average EFT (Ch 9, 13).
+- **People / Process / Product** (Marcus Lemonis) — the three components used to organize the retention fix (Ch 14).
+- **Pie Equation** — sign-ups ÷ churn = max EFTs; manipulate both to grow (Ch 14).
+- **Pre-Frame** — (offer step) positioning the gym as busy/desirable + intake questionnaire before the sale; "the sale has already started" (Ch 2).
+- **Prescriptive Assumed-Close Upsell** — selling supplements like a doctor prescribing pills (authority + assumed close); the most powerful sale (Ch 25).
+- **Prestige Labs** — Hormozi's supplement company, built to meet all the supplement-company criteria (Ch 25).
+- **Price Anchor** — (offer step) dropping a higher price first so the real price feels low (Ch 2).
+- **Problem Pain Cycle** — the chart in CLOSER's Overview step categorizing past attempts to show failure wasn't the client's fault (Ch 6).
+- **Reach-Outs/Touch Points** — the 1st retention horseman; personal contact every 14 days (systematize, never automate) (Ch 16).
+- **Resell** — growth path #3: get people to buy more frequently (retention) (Ch 2).
+- **Scarcity** — limited supply ("X spots left"); a unit constraint (Ch 2).
+- **Sell To Goal** — set the membership duration yourself, work price/terms backward to your target EFT (Ch 23).
+- **Sellability** — smaller time units sound cheaper ($49/week feels less than $211/month) (Ch 8).
+- **Setter / Closer** — the two-step high-ticket sales roles; "the set is the close" (close the $50–$100 consult fee on the phone) (Ch 24).
+- **Splinter Stack** — "unbundling" services you already do into a long list of named perks; a longer list feels like more value (Ch 2).
+- **SME (Subject Matter Expert)** — specialists (ops, sales, retention, automation) layered on as the org scales (Ch 17).
+- **Sprinkles** — internal plays; the traffic source that feeds all Wedding Cake tiers (Ch 26).
+- **The Six Human Needs** — Significance & Connection, Variety & Certainty, Growth & Contribution; used to intrinsically motivate trainers (Ch 20).
+- **Three Transfers (of sales)** — belief in the product, confidence the person can reach their goals, conviction they can overcome circumstances (Ch 5).
+- **The Trifecta (reinforcement)** — handwritten event invite + owner welcome call + t-shirt/swag; the R in CLOSER (Ch 6).
+- **Two Guiding Principles** — "make the prospect more valuable to your business than to your competition's"; "question all beliefs except those you truly believe" (front matter, Ch 25).
+- **Two-Tier Model** — large group ($167–$225) + small group/semi-private ($500–$700), priced by buyer type, not service (Ch 8).
+- **Urgency** — limited time ("starts tomorrow"); a TIME constraint, distinct from scarcity (Ch 2).
+- **Vicious / Virtuous Price Cycle** — lowering price degrades value/results/service/conviction; raising price improves all of them (Ch 8).
+- **Watermelon Curve** — Hormozi's name for the Membership Price Buying Curve (green/red looks like watermelon) (Ch 8).
+- **Wedding Cake Gym Profit Model** — the advanced model: 3 tiers (large group, semis, supplements), each with Icing + Cake = 6 revenue streams (Ch 22).
+- **Weapons-Grade Compassion** — taking 100% responsibility for another's state and acting on it; the engine of LTV + premium pricing (Ch 13).
+- **"You are NOT in the fitness business"** — you're in the accountability/relationship/community/coaching business; that's what retains (Ch 13).

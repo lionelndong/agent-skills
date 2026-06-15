@@ -1,0 +1,42 @@
+# Glossary — Fast Cash Playbook
+
+Terms, named plays, and figures from *$100M Playbook: Fast Cash* by Alex Hormozi. Format: **Term** — definition (Ch N).
+
+- **10x The 10% rule** — "If you get 10% of your customers to pay 10x the price… you double your revenue"; the extra revenue (minus delivery) drops straight to the bottom line (Ch 2).
+- **4Rs** — what to collect at the end of every play: Reviews, Results, Referrals, and Resells (Ch 4).
+- **5–10% cap** — limit a play to 5–10% of your customers so you absolutely sell out (e.g. 100 customers → 5–10 spots) (Ch 3).
+- **Announcement email** — the email listing the 1–3 core components of the offer; sent ~6 days out (consult) / 4 days out (checkout) (Ch 3, Ch 4).
+- **Automated Checkout Sequence** — the promotion layout for selling via a cart: build tension launch-style, open the cart to everyone at once, first come first serve (Ch 3).
+- **BAMFAM / launch-style tension** — building anticipation before opening the cart (cross-ref $100M Leads) (Ch 3).
+- **Big ticket** — one of the four levers; the offer is sold for lots of money (Ch 2).
+- **Bonus layering** — making 3 bonuses available to all buyers but revealing them one at a time across the sequence to widen the price-to-value discrepancy and push buyers over the edge (Ch 3).
+- **Cards on file** — charging a customer's stored card (with permission) after they reply "in"; if none on file, call to collect it immediately (Ch 3).
+- **Cash Calendar (Playbook)** — Hormozi's larger playbook that layers multiple cash plays year-round; Fast Cash is one playbook inside it (Ch 4).
+- **Cash Play** — a promotion run to your existing base to generate cash fast (Ch 1, Ch 2).
+- **Consult Sequence (Push to Consult)** — the promotion layout for selling via one-on-one consultations: make it buyable day one but drive people to book appointments across the 7-day window (Ch 3).
+- **Cooldown** — returning to providing value to your list after a play, before the next one (Ch 4).
+- **Cooled-off / neglected leads** — leads you haven't contacted for 6+ months; exclude them from the play and warm them up for the next one (Ch 3).
+- **Core components** — the 1–3 central elements of the offer (separate from the 3 bonuses) (Ch 3).
+- **Easy Cash Plays** — another promotion type referenced in the Cash Calendar (Ch 2, Ch 4).
+- **Engaged leads** — leads who've given explicit permission to be contacted; part of the warm audience (Ch 2).
+- **Exclusivity** — one of the four levers; the offer is high touch (Ch 2).
+- **Fast Cash Play** — a limited-time, high-ticket offer advertised to your warmest audiences, run ~4x/year on top of what they already pay (Ch 2).
+- **Four levers** — scarcity (limited spots), exclusivity (high touch), big ticket (lots of money), urgency (limited time) (Ch 2).
+- **"Get out of jail free" card** — what a ready Fast Cash Play functions as in a cash emergency (Ch 1, Ch 2).
+- **Gross margin (≥90%)** — the margin Fast Cash Plays should run at ("yours should too") (Ch 4).
+- **Hot list** — a highly responsive audience for whom you can include the price up front (Ch 3).
+- **"Little pay raises you give yourself"** — Hormozi's framing of quarterly Fast Cash Plays (Ch 4).
+- **Many-on-1** — a team of people supporting one customer; with a top expert, even more valuable than 1-on-1 (Ch 3).
+- **Price range (in 'figures')** — softening the price reveal: "four-figure investment," "willing to invest at least $2000," or "costs more than a year of service" (Ch 3).
+- **Reactivation Plays** — a promotion type referenced in the Cash Calendar (Ch 2, Ch 4).
+- **Referral Plays** — a promotion type referenced in the Cash Calendar (Ch 2, Ch 4).
+- **"Revenue is vanity. Profit is sanity. Cash is reality."** — the governing mantra of the playbook (Ch 1).
+- **Scarcity** — one of the four levers; limited spots (Ch 2).
+- **Tear sheet** — the clean one-page checklist to use yourself or hand to your team (Ch 4).
+- **Ultra-premium / White Glove offer** — an offer built from unscalable value at 10x–50x normal price (Ch 3).
+- **Unexpected cash drain** — the recurring, unpredictable cash shock (taxes, broken equipment, extra pay period) you should always expect (Ch 1, Ch 2).
+- **Unscalable value** — high-touch things that don't scale (Attention, Personalization, Convenience, Status, Duration, Speed, Experience, Access, Network, Secrets) — what justifies premium prices (Ch 3).
+- **Urgency** — one of the four levers; the offer is for a limited time (Ch 2).
+- **Waitlist** — after selling out, notifying (and charging) people who tried to buy if a spot opens (Ch 3).
+- **Warmest audiences** — current customers, previous customers, and engaged leads; most likely to buy and cheapest to reach (Ch 2).
+- **What to charge ("add a zero, ×5")** — take your average cart/transaction size, add a zero, optionally ×5 → 10x to 50x your current price (Ch 3).
